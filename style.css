@@ -1,0 +1,104 @@
+body {background-image: url('hstl.jpg');
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: top;
+      justify-content: center;
+      min-height: 100vh;
+      color: #385170;
+    }
+
+    header {
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+
+           
+    }
+
+
+    .head h1 {
+     padding:(120px 0px 0px 0px);
+ color: #ececec;
+      font-size: 50px;
+      position:right 200px;
+      margin: 0px;
+    }
+
+   .login-form {
+      width: 450px;
+      margin: 200px auto;
+      padding: 100px;
+      background-color: #142d4c;
+      border: 1px #fff;
+      box-shadow: 0 0 20px #000000;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+
+    button {
+      background: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 20px 40px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #9fd3c7, #9fd3c9);
+color:black;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      text-align: left;
+      color: #ececec;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    #deptForm {
+      display: none;
+    }
+
+    #message {
+      color: #ff0000;
+      margin-top: 10px;
+    }
+img{
+width:140px;
+height:120px;
+position:absolute;
+top:10px;
+left:20px;
+}
+#usn,#studentName {
+  border-radius: 5px;
+}

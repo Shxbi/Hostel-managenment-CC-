@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     body {
+      background-image: url(d2.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+    }
+
+    header {
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    .head h1 {
+      color: #ececec;
+      font-size: 50px;
+      margin: 0;
+    }
+.but {
+  float: left; 
+}
+
+.but a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.but:hover {
+  background-color: #ddd;
+  color: #142d4c;
+}
+
+
+    h3 {
+      position: absolute;
+      left: 1000px;
+      bottom: 0px;
+color: white;
+    }
+
+    ul{
+      width: 100%;
+      list-style-type: none;
+      margin: 138px 5px 0px -5px;  
+      padding: 7px;
+      overflow: hidden;
+      background-color: #385170;
+      background-size: auto;
+      padding-left: 10px;
+    }
+
+    li{
+      float: left;
+    }
+
+    a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+ 
+    .dropdown {
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #9fd3c7;
+      min-width: 160px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+     .notice-board {
+      width: 300px;
+      margin: 40px 20px 20px 20px;
+      background: #1c66a2;
+      padding: 20px;
+      
+      border-radius: 10px;
+      text-align: left;
+      font-size: 25px;
+      transform: rotate(0deg);
+      color: #fff;
+      box-shadow: 0 8px 16px rgba(0.2, 0, 0, 0.7);
+    }
+
+    .bulletin {
+      margin-bottom: 10px;
+    }
+
+
+    .bulletin:last-child {
+      margin-bottom: 0;
+    }
+.pp:hover,
+    .pi:hover,
+    .po:hover{
+      background-color:#7fffd4;
+      color: black;
+font-size:30px;
+    } 
+.h2{
+text-align:center;
+} 
+ .notice-board:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background:#022b5e ;
+      z-index: -1;
+      border-radius: 12px;
+      transform: rotate(2deg);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+
+
+   #popup-container {
+  position: absolute;
+  top: 250px;
+  right: -300px;
+  width: 300px;
+  height: 250px;
+  background: #7fffd4; 
+  color: #142d4c;
+  overflow-x: auto;
+  transition: right 0.4s ease-out;
+  border-radius: 10px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+ #popup-container1 {
+  position: absolute;
+  top: 470px;
+  right: -300px;
+  width: 300px;
+  height: 250px;
+  background: #142d4c; 
+  color: #7fffd4;
+  overflow-y: auto;
+  transition: right 1s ease-out;
+  border-radius: 10px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+#popup-content {
+  padding: 40px;
+}
+#popup-content1 {
+  padding: 40px;
+}
+
+#close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff; 
+}
+#close-btn1 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff; 
+}
+  .container{ 
+ width: 640px;
+      margin: -470px 350px 320px 420px;
+    
+      padding: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      font-size: 25px;
+
+            background-color: rgba(255, 255, 255, 0.8);
+           
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      
+      
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        
+</style>
+</head>
+<body>
+  <header>
+    <div class="head">
+      <h1>Hostel Management System</h1>
+    </div>
+    <h3>~Unit of SMVITM</h3>
+  </header>
+   <ul>
+  <li><a href="#fee">Fee Payment</a></li>
+  <li><a href="#">Queries</a></li>
+  <li><a href="#schedule">Hostel Schedule</a></li>
+  <li><a href="#games">Games</a></li>
+  <li><a href="#facility">Facility</a></li>
+  <li><a href="noti.html">Notification</a></li>
+  <li class="dropdown">
+    <a href="#mess">Mess</a>
+    <div class="dropdown-content">
+      <a href="#menu1">Menu 1</a>
+      <a href="#menu2">Menu 2</a>
+      <a href="#menu3">Menu 3</a>
+    </div>
+  </li>
+ <li><a href="Main-2.html">Check-In/Out</a></li>
+</ul>
+  <div class="notice-board">
+    <h2 class="h2">Notice Board</h2><hr>
+    <div class="bulletin">
+<table><tr>
+      <td class="pp"><a href="Mess_Bill.xlsx" onclick="downloadXLSX()">Mess bill of December has been released</a></tr>
+      <tr><td class="po"><a href="">Selection for VTU volleyball team will be held on 25/12/23</a></td></tr>
+      <tr><td class="pi">From this month breakfast will be served by 7:30am plz note</td></tr></table>
+    </div>
+  </div>
+ <div class="container">
+        <h1>Hostel Regulation</h1><hr>
+
+
+<P>1. Responsibility for Room and Surroundings:
+   - Hostel residents are responsible for maintaining cleanliness, avoiding defacement of hostel property, and abiding by the institution's code of conduct.
+  
+<P>2. Hostel Timings and Entry Restrictions:
+   - Girls hostel students must check in by 7:00 PM, while boys hostel students must return by 8:30 PM, with restrictions on leaving before 6:00 AM without prior permission.
+  
+<P>3. Accountability for Property Damage and Loss:
+   - Residents are liable for damages or losses in their rooms. They must provide an inventory of items and return them in good condition upon vacating the room.
+
+
+
+       
+        </div>
+ <div id="popup-container">
+    <div id="popup-content">
+      <span id="close-btn" onclick="closePopup()">X</span>
+      <h2><b><center>NEWS</center></b></h2>
+      <p><center>For non-veg mess registration..</center></p><p><a>Click here!</a></p>
+    </div>
+  </div>
+<div id="popup-container1">
+    <div id="popup-content1">
+      <span id="close-btn1" onclick="closePopup1()">X</span>
+      <h2><center>our campus!</center></h2>
+      <p><center>Don't miss it!!!.</center></p> <p><a  href="https://sode-edu.in/category/gallery/photos/">Click here!</a></p>
+    </div>
+  </div>
+<footer>
+    <div style="background-color:  #142d4c; color:  #ececec; text-align: center; padding: 10px;">
+<p>.founder    .contact    .service   .adviser  .decorum
+        <p>&copy; 2023 Hostel Management System. All rights reserved.</p>
+        <p>Contact: info@sode-edu.in</p>
+    </div>
+</footer>
+
+ <script>
+  
+ document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(showPopup, 2000);
+    });
+
+    function showPopup() {
+      document.getElementById("popup-container").style.right = "0";
+    }
+
+    function closePopup() {
+      document.getElementById("popup-container").style.right = "-300px";
+    }
+document.addEventListener("DOMContentLoaded", function() {
+      setTimeout(showPopup1, 2000);
+    });
+
+ function showPopup1() {
+      document.getElementById("popup-container1").style.right = "0";
+    }
+
+    function closePopup1() {
+      document.getElementById("popup-container1").style.right = "-300px";
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostelers Entry and Exit Tracker</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #385170;
+    }
+
+    header {
+      background-color: #142d4c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      width:100%;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+color: #ececec
+    }
+
+    th {
+      background-color: #142d4c;
+      color: white;
+    }
+h2{
+color: #ececec;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hostelers Entry and Exit Tracker</h1>
+  </header>
+
+  <section>
+    <h2 ><center> -------Hostel Students Activity Log-------</h2>
+      <table>
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th id="courseHeader">Room No.</th>
+          <th>Action</th>
+          <th>Date and Time</th>
+        </tr>
+      </thead>
+      <tbody id="activityLog"></tbody>
+    </table>
+  </section>
+
+  <script>
+    function logStudentActivity(action) {
+      const activityLog = document.getElementById('activityLog');
+      const now = new Date();
+      const dateTime = now.toLocaleString();
+
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `<td>${generateStudentID()}</td>
+                          <td>${generateStudentName()}</td>
+                          <td>${generateRoomNo()}</td>
+                          <td>${action}</td>
+                          <td>${dateTime}</td>`;
+
+      activityLog.appendChild(newRow);
+    }
+
+    function generateStudentID() {
+      return 'USN' + Math.floor(Math.random() * 1000);
+    }
+
+    function generateStudentName() {
+      const names = ['Dayanand S', 'Mahesh', 'Shobhit', 'Ayush'];
+      return names[Math.floor(Math.random() * names.length)];
+    }
+
+   function generateRoomNo() {
+      return 'Rno.' + Math.floor(Math.random() * 210);
+    }
+
+    function toggleColumn(column) {
+      const columnHeader = document.getElementById(`${column}Header`);
+      const columnCells = document.querySelectorAll(`td:nth-child(${columnCellsIndex(column)})`);
+
+      if (columnHeader.style.display === 'none') {
+        columnHeader.style.display = 'table-cell';
+        columnCells.forEach(cell => cell.style.display = 'table-cell');
+      } else {
+        columnHeader.style.display = 'none';
+        columnCells.forEach(cell => cell.style.display = 'none');
+      }
+    }
+
+    function columnCellsIndex(column) {
+      const headers = document.querySelectorAll('thead th');
+      for (let i = 0; i < headers.length; i++) {
+        if (headers[i].textContent.toLowerCase() === column) {
+          return i + 1; // nth-child is 1-indexed
+        }
+      }
+      return -1;
+    }
+
+    // Example: Log student entries and exits
+    for (let i = 0; i < 5; i++) {
+      logStudentActivity('Entered');
+      logStudentActivity('Left');
+    }
+  </script>
+
+</body>
+</html>

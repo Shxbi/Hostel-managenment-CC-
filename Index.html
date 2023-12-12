@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="head"><img src="smvlog.png" alt="SMVITM_LOGO">
+      <h1>Shri Madhwa Vadiraja Institute of Technology and Management</h1>
+    </div>
+</header>
+<div class="login-form" id="loginForm">
+  <button onclick="showStudentForm()">Student Login</button>
+  <button onclick="showDeptForm()">Department Login</button>
+
+   <form id="studentForm">
+    <label for="usn">Enter USN:</label>
+    <input type="text" id="usn" name="usn" placeholder="USN" required>
+
+    <label for="studentName">Enter Name:</label>
+    <input type="text" id="studentName" name="studentName" placeholder="Name" required>
+  </form>
+
+   <form id="deptForm">
+    <label for="userId">Enter User Id</label>
+    <input type="text" id="userId" name="userId" required>
+
+    <label for="passWord">Password</label>
+    <input type="password" id="passWord" name="passWord" required>
+  </form>
+
+   <button onclick="login()">Login</button>
+
+   <div id="message"></div>
+</div>
+
+<script>
+  function showStudentForm() {
+    document.getElementById('studentForm').style.display = 'block';
+    document.getElementById('deptForm').style.display = 'none';
+  }
+
+  function showDeptForm() {
+    document.getElementById('studentForm').style.display = 'none';
+    document.getElementById('deptForm').style.display = 'block';
+  }
+
+  function login() {
+    var usn = document.getElementById('usn').value;
+    var studentName = document.getElementById('studentName').value;
+    var userId = document.getElementById('userId').value;
+    var passWord = document.getElementById('passWord').value;
+    var messageElement = document.getElementById('message');
+
+    if (usn === 'ad046' && studentName === 'shobith') {
+      window.location.href = 'main-1.html';
+    } else if (userId === 'raj' && passWord === '12a') {
+      window.location.href = 'main-3.html';
+    } else if (!usn || !studentName || !userId || !passWord) {
+      messageElement.innerHTML = 'Please fill proper details';
+    } else {
+      messageElement.innerHTML = 'Student or faculty not found.';
+    }
+    showStudentForm();
+  }
+</script>
+
+</body>
+</html>
